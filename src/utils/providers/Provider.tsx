@@ -4,6 +4,8 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useAppStore } from '@store/app/useAppStore';
 import { darkTheme, lightTheme } from '@theme/colors';
 import { fontConfig } from '@theme/typography';
+import { ApolloProvider } from '@apollo/client';
+import { client } from '@graphql/index';
 
 export const Provider = ({ children }: { children: ReactNode }) => {
     const { theme } = useAppStore();
@@ -23,7 +25,9 @@ export const Provider = ({ children }: { children: ReactNode }) => {
 
     return (
         <SafeAreaProvider>
-            <PaperProvider theme={paperTheme}>{children}</PaperProvider>
+            <ApolloProvider client={client}>
+                <PaperProvider theme={paperTheme}>{children}</PaperProvider>
+            </ApolloProvider>
         </SafeAreaProvider>
     );
 };

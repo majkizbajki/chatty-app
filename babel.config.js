@@ -9,6 +9,7 @@ module.exports = {
                     '@assets': './src/assets',
                     '@components': './src/components',
                     '@context': './src/context',
+                    '@graphql': './src/graphql',
                     '@hooks': './src/hooks',
                     '@i18n': './src/i18n',
                     '@navigation': './src/navigation',

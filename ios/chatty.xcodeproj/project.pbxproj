@@ -14,6 +14,7 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		33890AA7CDC7D74B0A1183C1 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 0EF185CC2EA06BFA98C80B4E /* PrivacyInfo.xcprivacy */; };
+		62084D4F656B4A3BA3177C3E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29751A45BAD343D5B094883E /* Colors.xcassets */; };
 		7699B88040F8A987B510C191 /* libPods-chatty-chattyTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-chatty-chattyTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		907FCEFE2C4A90FD009D6318 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 907FCEEA2C4A90FD009D6318 /* AntDesign.ttf */; };
@@ -35,12 +36,12 @@
 		907FCF0E2C4A90FD009D6318 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 907FCEFA2C4A90FD009D6318 /* Octicons.ttf */; };
 		907FCF0F2C4A90FD009D6318 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 907FCEFB2C4A90FD009D6318 /* SimpleLineIcons.ttf */; };
 		907FCF102C4A90FD009D6318 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 907FCEFC2C4A90FD009D6318 /* Zocial.ttf */; };
+		907FCF142C4BAD37009D6318 /* SoftInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907FCF132C4BAD37009D6318 /* SoftInput.swift */; };
 		BCC45A30E9C5417F9AD5EDA0 /* SFCompactText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4BB5350D7C794D5DB7130735 /* SFCompactText-Regular.ttf */; };
 		C955333A6EF449B0891FCFFF /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 197B440558354D279702F162 /* Poppins-SemiBold.ttf */; };
 		D2F07541282E4328859D9A91 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84079D91D23B470DADE5A3EE /* Poppins-Bold.ttf */; };
 		E1CD128EEE0F40828DF65861 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3372D8582FFA45C9982C7CC2 /* Poppins-Regular.ttf */; };
 		FC6AB9F929C642408CB36BA3 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D93FCEDFEC46F0A55A2633 /* BootSplash.storyboard */; };
-		62084D4F656B4A3BA3177C3E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29751A45BAD343D5B094883E /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,16 +66,18 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = chatty/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = chatty/main.m; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = chatty/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		197B440558354D279702F162 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-SemiBold.ttf"; path = "../src/assets/fonts/Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		197B440558354D279702F162 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-SemiBold.ttf"; path = "../src/assets/fonts/Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-chatty-chattyTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-chatty-chattyTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3372D8582FFA45C9982C7CC2 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Regular.ttf"; path = "../src/assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		29751A45BAD343D5B094883E /* Colors.xcassets */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = folder.assetcatalog; name = Colors.xcassets; path = chatty/Colors.xcassets; sourceTree = "<group>"; };
+		3372D8582FFA45C9982C7CC2 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Regular.ttf"; path = "../src/assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-chatty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chatty.debug.xcconfig"; path = "Target Support Files/Pods-chatty/Pods-chatty.debug.xcconfig"; sourceTree = "<group>"; };
-		4BB5350D7C794D5DB7130735 /* SFCompactText-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SFCompactText-Regular.ttf"; path = "../src/assets/fonts/SFCompactText-Regular.ttf"; sourceTree = "<group>"; };
+		4BB5350D7C794D5DB7130735 /* SFCompactText-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SFCompactText-Regular.ttf"; path = "../src/assets/fonts/SFCompactText-Regular.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-chatty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chatty.release.xcconfig"; path = "Target Support Files/Pods-chatty/Pods-chatty.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-chatty-chattyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chatty-chattyTests.debug.xcconfig"; path = "Target Support Files/Pods-chatty-chattyTests/Pods-chatty-chattyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-chatty.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-chatty.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = chatty/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		84079D91D23B470DADE5A3EE /* Poppins-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Bold.ttf"; path = "../src/assets/fonts/Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		84079D91D23B470DADE5A3EE /* Poppins-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Bold.ttf"; path = "../src/assets/fonts/Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		84D93FCEDFEC46F0A55A2633 /* BootSplash.storyboard */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = BootSplash.storyboard; path = chatty/BootSplash.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-chatty-chattyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chatty-chattyTests.release.xcconfig"; path = "Target Support Files/Pods-chatty-chattyTests/Pods-chatty-chattyTests.release.xcconfig"; sourceTree = "<group>"; };
 		907FCEEA2C4A90FD009D6318 /* AntDesign.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AntDesign.ttf; sourceTree = "<group>"; };
 		907FCEEB2C4A90FD009D6318 /* Entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Entypo.ttf; sourceTree = "<group>"; };
@@ -95,10 +98,10 @@
 		907FCEFA2C4A90FD009D6318 /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
 		907FCEFB2C4A90FD009D6318 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
 		907FCEFC2C4A90FD009D6318 /* Zocial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zocial.ttf; sourceTree = "<group>"; };
-		920C6276D00749AB9817C77A /* SFCompactDisplay-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SFCompactDisplay-Regular.ttf"; path = "../src/assets/fonts/SFCompactDisplay-Regular.ttf"; sourceTree = "<group>"; };
+		907FCF122C4BAD37009D6318 /* chatty-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "chatty-Bridging-Header.h"; sourceTree = "<group>"; };
+		907FCF132C4BAD37009D6318 /* SoftInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftInput.swift; sourceTree = "<group>"; };
+		920C6276D00749AB9817C77A /* SFCompactDisplay-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SFCompactDisplay-Regular.ttf"; path = "../src/assets/fonts/SFCompactDisplay-Regular.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		84D93FCEDFEC46F0A55A2633 /* BootSplash.storyboard */ = {isa = PBXFileReference; name = "BootSplash.storyboard"; path = "chatty/BootSplash.storyboard"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		29751A45BAD343D5B094883E /* Colors.xcassets */ = {isa = PBXFileReference; name = "Colors.xcassets"; path = "chatty/Colors.xcassets"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = folder.assetcatalog; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +155,8 @@
 				0EF185CC2EA06BFA98C80B4E /* PrivacyInfo.xcprivacy */,
 				84D93FCEDFEC46F0A55A2633 /* BootSplash.storyboard */,
 				29751A45BAD343D5B094883E /* Colors.xcassets */,
+				907FCF132C4BAD37009D6318 /* SoftInput.swift */,
+				907FCF122C4BAD37009D6318 /* chatty-Bridging-Header.h */,
 			);
 			name = chatty;
 			sourceTree = "<group>";
@@ -176,7 +181,6 @@
 				4BB5350D7C794D5DB7130735 /* SFCompactText-Regular.ttf */,
 			);
 			name = Resources;
-			path = "";
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -307,7 +311,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1540;
 					};
 				};
 			};
@@ -521,6 +525,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
+				907FCF142C4BAD37009D6318 /* SoftInput.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -540,6 +545,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-chatty-chattyTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -567,6 +573,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-chatty-chattyTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = chattyTests/Info.plist;
@@ -608,6 +615,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = chatty;
+				SWIFT_OBJC_BRIDGING_HEADER = "chatty-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -634,6 +642,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = chatty;
+				SWIFT_OBJC_BRIDGING_HEADER = "chatty-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
