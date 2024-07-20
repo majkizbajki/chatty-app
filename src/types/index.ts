@@ -1,3 +1,4 @@
+export type UserRole = 'admin' | 'user';
 export type ThemeType = 'dark' | 'light';
 
 export interface User {
@@ -5,5 +6,5 @@ export interface User {
     firstName: string;
     id: string;
     lastName: string;
-    role: 'admin' | 'user';
+    role: UserRole;
 }

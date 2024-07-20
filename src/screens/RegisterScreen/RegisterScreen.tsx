@@ -42,6 +42,7 @@ const styles = (colors: Colors) =>
             paddingHorizontal: 16
         },
         title: {
+            marginTop: 12,
             color: colors.plum500
         },
         content: {
