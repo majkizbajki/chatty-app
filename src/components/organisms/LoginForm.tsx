@@ -1,42 +1,49 @@
 import { useMutation } from '@apollo/client';
-import { Agreement } from '@components/atoms/Agreement';
+import { UserRole } from '@appTypes/index';
 import { Button } from '@components/atoms/Button';
 import { FormInput } from '@components/molecules/FormInput';
-import { REGISTER_USER } from '@graphql/mutations/registerUser';
+import { LOGIN_USER } from '@graphql/mutations/loginUser';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { RegisterSchemaType, useRegisterSchema } from '@schemas/auth/RegisterSchema';
+import { LoginSchemaType, useLoginSchema } from '@schemas/auth/LoginSchema';
+import { useAuthStore } from '@store/auth/useAuthStore';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { StyleSheet, View } from 'react-native';
 import Toast from 'react-native-toast-message';
 
-export const RegisterForm = () => {
+export const LoginForm = () => {
     const { t } = useTranslation();
-    const registerSchema = useRegisterSchema();
+    const { login } = useAuthStore();
+    const loginSchema = useLoginSchema();
     const {
         control,
         formState: { errors },
         handleSubmit,
         reset
-    } = useForm<RegisterSchemaType>({
+    } = useForm<LoginSchemaType>({
         defaultValues: {
             email: '',
-            firstName: '',
-            lastName: '',
-            password: '',
-            passwordConfirmation: ''
+            password: ''
         },
         mode: 'all',
-        resolver: zodResolver(registerSchema)
+        resolver: zodResolver(loginSchema)
     });
-    const [register, { loading }] = useMutation(REGISTER_USER, {
-        onCompleted: () => {
-            reset();
-            Toast.show({
-                text1: t('globals.success'),
-                text2: t('register.sign_up_success'),
-                type: 'info'
-            });
+    const [mutate, { loading }] = useMutation(LOGIN_USER, {
+        onCompleted: ({ loginUser }) => {
+            if (loginUser?.token && loginUser?.user) {
+                const { token, user } = loginUser;
+                login({
+                    token,
+                    user: {
+                        email: user.email ?? '',
+                        firstName: user.firstName ?? '',
+                        id: user.id ?? '',
+                        lastName: user.lastName ?? '',
+                        role: (user.role as UserRole) ?? 'user'
+                    }
+                });
+                reset();
+            }
         },
         onError: ({ message }) => {
             Toast.show({
@@ -47,8 +54,8 @@ export const RegisterForm = () => {
         }
     });
 
-    const onSubmit = (data: RegisterSchemaType) => {
-        register({
+    const onSubmit = (data: LoginSchemaType) => {
+        mutate({
             variables: data
         });
     };
@@ -67,39 +74,16 @@ export const RegisterForm = () => {
                 />
                 <FormInput
                     controler={control}
-                    label={t('forms.auth.register.first_name')}
-                    name='firstName'
-                    errorMessage={errors.firstName?.message}
-                    isError={errors.firstName}
-                />
-                <FormInput
-                    controler={control}
-                    label={t('forms.auth.register.last_name')}
-                    name='lastName'
-                    errorMessage={errors.lastName?.message}
-                    isError={errors.lastName}
-                />
-                <FormInput
-                    controler={control}
                     label={t('forms.auth.password')}
                     name='password'
                     errorMessage={errors.password?.message}
                     isError={errors.password}
                     type='password'
                 />
-                <FormInput
-                    controler={control}
-                    label={t('forms.auth.register.password_confirmation')}
-                    name='passwordConfirmation'
-                    errorMessage={errors.passwordConfirmation?.message}
-                    isError={errors.passwordConfirmation}
-                    type='password'
-                />
             </View>
             <Button onPress={handleSubmit(onSubmit)} isLoading={loading}>
-                {t('register.sign_up')}
+                {t('login.log_in')}
             </Button>
-            <Agreement />
         </View>
     );
 };

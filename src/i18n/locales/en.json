@@ -1,38 +1,52 @@
 {
     "chat": {},
-    "chat_list": {},
+    "chat_list": {
+        "log_out": "Log out"
+    },
     "errors": {
         "error": "Error",
         "forms": {
             "auth": {
                 "email_required": "Email address is required",
                 "password_required": "Password is required",
+                "wrong_email_format": "Wrong email address format",
                 "register": {
                     "first_name_required": "First name is required",
                     "last_name_required": "Last name is required",
                     "password_confirmation_required": "Password confirmation is required",
                     "weak_password": "The password should contain at least 8 characters (including upper and lower case letters, a digit and a special character)",
-                    "wrong_email_format": "Wrong email address format",
                     "wrong_password_confirmation": "Passwords must be the same"
                 }
             }
         },
         "wrong_url": "Something went wrong with redirecting to the website"
     },
+    "forms": {
+        "auth": {
+            "email": "e-mail address",
+            "password": "password",
+            "register": {
+                "first_name": "first name",
+                "last_name": "last name",
+                "password_confirmation": "password confirmation"
+            }
+        }
+    },
     "globals": {
         "and": "and",
         "success": "Success"
     },
-    "login": {},
+    "login": {
+        "label": "Log in and stay in touch with everyone!",
+        "log_in": "Log in",
+        "redirection": {
+            "button": "Sign up",
+            "label": "Don't have an account?"
+        },
+        "title": "Welcome back"
+    },
     "register": {
         "agreement": "By signing up you agree with",
-        "form": {
-            "email": "e-mail address",
-            "first_name": "first name",
-            "last_name": "last name",
-            "password": "password",
-            "password_confirmation": "password confirmation"
-        },
         "privacy_policy": "Privacy Policy",
         "redirection": {
             "button": "Log in",

@@ -9,7 +9,7 @@ export const useRegisterSchema = () => {
             email: z
                 .string()
                 .min(1, t('errors.forms.auth.email_required'))
-                .email({ message: t('errors.forms.auth.register.wrong_email_format') }),
+                .email({ message: t('errors.forms.auth.wrong_email_format') }),
 
             firstName: z.string().min(1, t('errors.forms.auth.register.first_name_required')),
             lastName: z.string().min(1, t('errors.forms.auth.register.last_name_required')),
