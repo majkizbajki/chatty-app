@@ -24,7 +24,7 @@ const extraThemeColors = {
     gray300: '#BFC1CC',
     gray500: '#9FA2B2',
     plum300: '#993AFC',
-    plum500: '#B6DEFD',
+    plum500: '#5603AD',
     white: '#FFFFFF',
     whiteBlured: '#F0F5FD'
 };

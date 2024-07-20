@@ -7,6 +7,7 @@ import { ChatScreen } from '@screens/ChatScreen/ChatScreen';
 import { LoginScreen } from '@screens/LoginScreen/LoginScreen';
 import { RegisterScreen } from '@screens/RegisterScreen/RegisterScreen';
 import { RootStackParamList } from './types';
+import { ToastMessage } from '@components/atoms/ToastMessage';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -19,18 +20,21 @@ export const Navigation = () => {
         }, 1000);
 
     return (
-        <NavigationContainer onReady={hideBootSplash}>
-            <Stack.Navigator
-                screenOptions={{
-                    headerShown: false
-                }}
-                initialRouteName={initialRoute}
-            >
-                <Stack.Screen name='ChatListScreen' component={ChatListScreen} />
-                <Stack.Screen name='ChatScreen' component={ChatScreen} />
-                <Stack.Screen name='LoginScreen' component={LoginScreen} />
-                <Stack.Screen name='RegisterScreen' component={RegisterScreen} />
-            </Stack.Navigator>
-        </NavigationContainer>
+        <>
+            <NavigationContainer onReady={hideBootSplash}>
+                <Stack.Navigator
+                    screenOptions={{
+                        headerShown: false
+                    }}
+                    initialRouteName={initialRoute}
+                >
+                    <Stack.Screen name='ChatListScreen' component={ChatListScreen} />
+                    <Stack.Screen name='ChatScreen' component={ChatScreen} />
+                    <Stack.Screen name='LoginScreen' component={LoginScreen} />
+                    <Stack.Screen name='RegisterScreen' component={RegisterScreen} />
+                </Stack.Navigator>
+            </NavigationContainer>
+            <ToastMessage />
+        </>
     );
 };
