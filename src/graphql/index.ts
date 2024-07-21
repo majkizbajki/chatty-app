@@ -1,19 +1,19 @@
+import Config from 'react-native-config';
 import {
     ApolloClient,
-    HttpLink,
     ApolloLink,
+    FetchResult,
+    HttpLink,
     InMemoryCache,
-    split,
-    Operation,
     NextLink,
-    FetchResult
+    Operation,
+    split
 } from '@apollo/client';
-import { getMainDefinition, Observable } from '@apollo/client/utilities';
-import Config from 'react-native-config';
-import { GraphQLWsLink } from '@apollo/client/link/subscriptions';
-import { createClient } from 'graphql-ws';
 import { onError } from '@apollo/client/link/error';
+import { GraphQLWsLink } from '@apollo/client/link/subscriptions';
+import { getMainDefinition, Observable } from '@apollo/client/utilities';
 import { useAuthStore } from '@store/auth/useAuthStore';
+import { createClient } from 'graphql-ws';
 
 if (!Config.API_URL) {
     throw new Error('API_URL is not set in configuration');

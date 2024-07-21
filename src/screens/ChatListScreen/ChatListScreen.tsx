@@ -1,11 +1,11 @@
+import { useTranslation } from 'react-i18next';
+import { StyleSheet } from 'react-native';
+import { Text } from 'react-native-paper';
 import { Header } from '@components/molecules/Header';
 import { ChatList } from '@components/organisms/ChatList';
 import { ScreenTemplate } from '@components/templates/ScreenTemplate';
 import { useAppTheme } from '@hooks/useAppTheme';
 import { Colors } from '@theme/colors';
-import { useTranslation } from 'react-i18next';
-import { StyleSheet } from 'react-native';
-import { Text } from 'react-native-paper';
 
 export const ChatListScreen = () => {
     const { colors } = useAppTheme();
@@ -30,7 +30,6 @@ export const ChatListScreen = () => {
 const styles = (colors: Colors) =>
     StyleSheet.create({
         safeArea: {
-            flex: 1,
             backgroundColor: colors.blue300
         },
         screen: {

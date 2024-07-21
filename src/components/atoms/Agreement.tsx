@@ -1,9 +1,9 @@
-import { useAppTheme } from '@hooks/useAppTheme';
-import { Colors } from '@theme/colors';
 import { useTranslation } from 'react-i18next';
 import { Linking, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { Text } from 'react-native-paper';
 import Toast from 'react-native-toast-message';
+import { useAppTheme } from '@hooks/useAppTheme';
+import { Colors } from '@theme/colors';
 
 const URL = 'https://google.com';
 

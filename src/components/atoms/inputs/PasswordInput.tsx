@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { TextInput as PaperTextInput, TextInputProps } from 'react-native-paper';
-import { useAppTheme } from '@hooks/useAppTheme';
-import { Colors } from '@theme/colors';
 import { Vision } from '@assets/icons/Vision';
 import { VisionLow } from '@assets/icons/VisionLow';
+import { useAppTheme } from '@hooks/useAppTheme';
+import { Colors } from '@theme/colors';
 
 export const PasswordInput = ({ ...props }: TextInputProps) => {
     const [showPassword, setShowPassword] = useState(false);

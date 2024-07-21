@@ -1,8 +1,8 @@
+import { ReactNode } from 'react';
 import { Phone } from '@assets/icons/Phone';
 import { Rooms } from '@assets/icons/Rooms';
 import { Search } from '@assets/icons/Search';
 import { VideoCall } from '@assets/icons/VideoCall';
-import { ReactNode } from 'react';
 
 export type HeaderIconType = 'phone' | 'rooms' | 'search' | 'videocall';
 

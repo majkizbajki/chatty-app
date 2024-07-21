@@ -1,7 +1,7 @@
-import { useAppTheme } from '@hooks/useAppTheme';
-import { Colors } from '@theme/colors';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { Text } from 'react-native-paper';
+import { useAppTheme } from '@hooks/useAppTheme';
+import { Colors } from '@theme/colors';
 
 interface AuthRedirectionProps {
     onPress: () => void;

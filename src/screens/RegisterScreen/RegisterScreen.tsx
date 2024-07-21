@@ -1,3 +1,6 @@
+import { useTranslation } from 'react-i18next';
+import { StyleSheet } from 'react-native';
+import { Text } from 'react-native-paper';
 import { AuthRedirection } from '@components/atoms/AuthRedirection';
 import { RegisterForm } from '@components/organisms/RegisterForm';
 import { KeyboardAvoid } from '@components/templates/KeyboardAvoid';
@@ -7,9 +10,6 @@ import { RootStackParamList } from '@navigation/types';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { Colors } from '@theme/colors';
-import { useTranslation } from 'react-i18next';
-import { StyleSheet } from 'react-native';
-import { Text } from 'react-native-paper';
 
 export const RegisterScreen = () => {
     const { colors } = useAppTheme();

@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next';
 import { StyleSheet, View } from 'react-native';
 import { Text } from 'react-native-paper';
+import { Button } from '@components/atoms/Button';
 import { useAppTheme } from '@hooks/useAppTheme';
 import { Colors } from '@theme/colors';
-import { Button } from '@components/atoms/Button';
 
 interface NoDataProps {
     description?: string;

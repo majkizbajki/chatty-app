@@ -1,16 +1,15 @@
-import { useQuery, useSubscription } from '@apollo/client';
+import { useMemo } from 'react';
+import { Image, Pressable, StyleSheet, View } from 'react-native';
+import { Text } from 'react-native-paper';
+import { useQuery } from '@apollo/client';
 import { ChatCardSkeleton } from '@components/atoms/ChatCardSkeleton';
 import { GET_ROOM } from '@graphql/queries/room';
-import { MESSAGE_ADDED_SUBSCRIPTION } from '@graphql/subscriptions/messageAdded';
 import { useAppTheme } from '@hooks/useAppTheme';
 import { RootStackParamList } from '@navigation/types';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { Colors } from '@theme/colors';
 import { formatDistanceToNowShort } from '@utils/formatDistanceToNowShort';
-import { useMemo } from 'react';
-import { Image, Pressable, StyleSheet, View } from 'react-native';
-import { Text } from 'react-native-paper';
 
 interface ChatCardProps {
     roomId: string;
@@ -19,10 +18,10 @@ interface ChatCardProps {
 export const ChatCard = ({ roomId }: ChatCardProps) => {
     const { colors } = useAppTheme();
     const { navigate } = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
-    const { data, loading } = useQuery(GET_ROOM, { variables: { roomId } });
+    const { data, loading } = useQuery(GET_ROOM, { variables: { roomId }, pollInterval: 1000 });
 
     const style = styles(colors);
-    const lastMessage = useMemo(() => data?.room?.messages?.at(-1), [data]);
+    const lastMessage = useMemo(() => data?.room?.messages?.at(0), [data]);
 
     if (loading) {
         return <ChatCardSkeleton />;

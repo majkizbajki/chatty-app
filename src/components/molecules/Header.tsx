@@ -1,8 +1,8 @@
+import { ReactNode } from 'react';
+import { StyleSheet, View } from 'react-native';
 import { useAppTheme } from '@hooks/useAppTheme';
 import { Colors } from '@theme/colors';
 import { headerIcons, HeaderIconType } from '@utils/headerIcons';
-import { ReactNode } from 'react';
-import { StyleSheet, View } from 'react-native';
 
 interface HeaderProps {
     children?: ReactNode;
@@ -27,6 +27,8 @@ const styles = (colors: Colors) =>
         container: {
             flexDirection: 'row',
             backgroundColor: colors.blue300,
+            borderBottomRightRadius: 24,
+            borderBottomLeftRadius: 24,
             padding: 16,
             alignItems: 'center'
         },

@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import BootSplash from 'react-native-bootsplash';
+import { ToastMessage } from '@components/atoms/ToastMessage';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { ChatListScreen } from '@screens/ChatListScreen/ChatListScreen';
 import { ChatScreen } from '@screens/ChatScreen/ChatScreen';
 import { LoginScreen } from '@screens/LoginScreen/LoginScreen';
 import { RegisterScreen } from '@screens/RegisterScreen/RegisterScreen';
-import { RootStackParamList } from './types';
-import { ToastMessage } from '@components/atoms/ToastMessage';
 import { useAuthStore } from '@store/auth/useAuthStore';
+import { RootStackParamList } from './types';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 

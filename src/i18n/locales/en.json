@@ -1,5 +1,7 @@
 {
-    "chat": {},
+    "chat": {
+        "active_now": "Active now"
+    },
     "chat_list": {
         "log_out": "Log out",
         "title": "Rooms"

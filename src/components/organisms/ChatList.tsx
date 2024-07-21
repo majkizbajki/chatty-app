@@ -1,3 +1,7 @@
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { RefreshControl, StyleSheet, View } from 'react-native';
+import { ActivityIndicator, Button } from 'react-native-paper';
 import { useQuery } from '@apollo/client';
 import { ChatCard } from '@components/molecules/ChatCard';
 import { NoData } from '@components/molecules/NoData';
@@ -5,10 +9,6 @@ import { GET_USERS_ROOMS } from '@graphql/queries/userRooms';
 import { useAppTheme } from '@hooks/useAppTheme';
 import { FlashList } from '@shopify/flash-list';
 import { useAuthStore } from '@store/auth/useAuthStore';
-import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { RefreshControl, StyleSheet, View } from 'react-native';
-import { ActivityIndicator, Button } from 'react-native-paper';
 
 export const ChatList = () => {
     const { t } = useTranslation();
@@ -42,7 +42,11 @@ export const ChatList = () => {
                     onEndReachedThreshold={0.2}
                     contentContainerStyle={styles.list}
                     ItemSeparatorComponent={() => <View style={styles.separator} />}
-                    ListFooterComponent={() => <Button onPress={logout}>{t('chat_list.log_out')}</Button>}
+                    ListFooterComponent={() => (
+                        <Button style={styles.logout} onPress={logout}>
+                            {t('chat_list.log_out')}
+                        </Button>
+                    )}
                     ListEmptyComponent={() => {
                         if (!loading) {
                             return <NoData empty hideTitle />;
@@ -72,5 +76,10 @@ const styles = StyleSheet.create({
     },
     separator: {
         height: 12
+    },
+    logout: {
+        width: 96,
+        alignSelf: 'center',
+        marginVertical: 16
     }
 });
