@@ -1,7 +1,8 @@
 {
     "chat": {},
     "chat_list": {
-        "log_out": "Log out"
+        "log_out": "Log out",
+        "title": "Rooms"
     },
     "errors": {
         "error": "Error",
@@ -34,6 +35,8 @@
     },
     "globals": {
         "and": "and",
+        "empty": "No data to show",
+        "refetch": "Refetch",
         "success": "Success"
     },
     "login": {
