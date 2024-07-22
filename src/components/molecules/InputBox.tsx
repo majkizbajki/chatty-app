@@ -20,6 +20,7 @@ export const InputBox = ({ onSend, roomId }: InputBoxProps) => {
     const { t } = useTranslation();
     const [sendMessage, { loading }] = useMutation(SEND_MESSAGE, {
         onCompleted: () => {
+            setMessage('');
             onSend();
         },
         onError: ({ message }) => {
