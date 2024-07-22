@@ -1,3 +1,4 @@
+import { client } from '@graphql/index';
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
 import { AuthStore, State } from './types';
@@ -19,7 +20,10 @@ export const useAuthStore = create<AuthStore>()(
         set => ({
             ...initialState,
             login: ({ token, user }) => set(() => ({ token, user })),
-            logout: () => set(() => initialState)
+            logout: () => {
+                client.clearStore();
+                set(() => initialState);
+            }
         }),
         {
             name: 'auth-storage',

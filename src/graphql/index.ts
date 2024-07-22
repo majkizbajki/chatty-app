@@ -1,19 +1,11 @@
-import {
-    ApolloClient,
-    HttpLink,
-    ApolloLink,
-    InMemoryCache,
-    split,
-    Operation,
-    NextLink,
-    FetchResult
-} from '@apollo/client';
-import { getMainDefinition, Observable } from '@apollo/client/utilities';
 import Config from 'react-native-config';
-import { GraphQLWsLink } from '@apollo/client/link/subscriptions';
-import { createClient } from 'graphql-ws';
+import { ApolloClient, HttpLink, InMemoryCache, split } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
 import { onError } from '@apollo/client/link/error';
+import { GraphQLWsLink } from '@apollo/client/link/subscriptions';
+import { getMainDefinition } from '@apollo/client/utilities';
 import { useAuthStore } from '@store/auth/useAuthStore';
+import { createClient } from 'graphql-ws';
 
 if (!Config.API_URL) {
     throw new Error('API_URL is not set in configuration');
@@ -25,29 +17,22 @@ if (!Config.WS_URL) {
 
 const httpLink = new HttpLink({ uri: Config.API_URL });
 
-const authMiddleware = new ApolloLink((operation: Operation, forward: NextLink): Observable<FetchResult> => {
-    return new Observable(observer => {
-        const { token } = useAuthStore.getState();
-
-        operation.setContext({
-            headers: {
-                Authorization: token ? `Bearer ${token}` : ''
-            }
-        });
-
-        const subscription = forward(operation).subscribe({
-            next: observer.next.bind(observer),
-            error: observer.error.bind(observer),
-            complete: observer.complete.bind(observer)
-        });
-
-        return () => subscription.unsubscribe();
-    });
+const authLink = setContext((_, { headers }) => {
+    const { token } = useAuthStore.getState();
+    return {
+        headers: {
+            ...headers,
+            Authorization: token ? `Bearer ${token}` : ''
+        }
+    };
 });
 
 const wsLink = new GraphQLWsLink(
     createClient({
-        url: `${Config.WS_URL}?token=${useAuthStore.getState().token}`
+        url: `${Config.WS_URL}`,
+        connectionParams: {
+            token: useAuthStore.getState().token
+        }
     })
 );
 
@@ -57,7 +42,7 @@ const splitLink = split(
         return definition.kind === 'OperationDefinition' && definition.operation === 'subscription';
     },
     wsLink,
-    httpLink
+    authLink.concat(httpLink)
 );
 
 const logoutLink = onError(({ networkError }) => {
@@ -66,9 +51,9 @@ const logoutLink = onError(({ networkError }) => {
     }
 });
 
-const link = ApolloLink.from([logoutLink, authMiddleware, splitLink]);
+const link = logoutLink.concat(splitLink);
 
 export const client = new ApolloClient({
     cache: new InMemoryCache(),
-    link: link
+    link
 });
