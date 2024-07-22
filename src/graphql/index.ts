@@ -1,11 +1,11 @@
 import Config from 'react-native-config';
 import { ApolloClient, HttpLink, InMemoryCache, split } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
 import { onError } from '@apollo/client/link/error';
 import { GraphQLWsLink } from '@apollo/client/link/subscriptions';
 import { getMainDefinition } from '@apollo/client/utilities';
 import { useAuthStore } from '@store/auth/useAuthStore';
 import { createClient } from 'graphql-ws';
-import { setContext } from '@apollo/client/link/context';
 
 if (!Config.API_URL) {
     throw new Error('API_URL is not set in configuration');

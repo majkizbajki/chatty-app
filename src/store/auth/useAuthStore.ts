@@ -1,8 +1,8 @@
+import { client } from '@graphql/index';
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
 import { AuthStore, State } from './types';
 import { zustandStorage } from '../mmkv';
-import { client } from '@graphql/index';
 
 const initialState: State = {
     token: '',
